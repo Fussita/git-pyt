@@ -1,0 +1,25 @@
+python -m venv ven
+venv\Scripts\activate
+pip install "fastapi[standard]"
+pip freeze
+
+uvicorn main:app --reload
+
+
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+return 'HOLA MUNDO'
+
+@app.get("/item/{item.id}")
+def read_item( item_id: int, q: str | None = None ):
+return { "item_id": item_id, "q": q }
+
+
+CMD FOR EXECUTE
+
+fastapi dev main.py
