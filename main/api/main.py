@@ -1,12 +1,4 @@
 
-"""
-    python -m venv venv
-    venv\Scripts\activate
-    pip install "fastapi[standard]"
-    pip install pydantic
-    uvicorn main:app --reload
-"""
-
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, EmailStr, Field
 
